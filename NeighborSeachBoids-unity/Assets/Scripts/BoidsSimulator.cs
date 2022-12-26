@@ -59,7 +59,7 @@ namespace BoidsSimulator
             var matricesArray = new NativeArray<Matrix4x4>(_instanceCount, Allocator.TempJob);
 
             var neighborSearchBoidsSimulator = new NeighborSearchBoidsSimulator(_neighborSearchBoidsSetting);
-            neighborSearchBoidsSimulator.Calculate(ref matricesArray, _boidsDatas);
+            neighborSearchBoidsSimulator.Calculate(matricesArray, _boidsDatas);
             
             RendererUtility.InstanceRenderUtility.DrawAll(_mesh, _renderParams, matricesArray);
 
@@ -71,7 +71,7 @@ namespace BoidsSimulator
             var allSearchBoidsSimulator = new AllSearchBoidsSimulator(_allSearchBoidsSetting);
             var matricesArray = new NativeArray<Matrix4x4>(_instanceCount, Allocator.TempJob);
             
-            allSearchBoidsSimulator.Calculate(ref matricesArray, _boidsDatas);
+            allSearchBoidsSimulator.Calculate(matricesArray, _boidsDatas);
 
             RendererUtility.InstanceRenderUtility.DrawAll(_mesh, _renderParams, matricesArray);
             
@@ -82,7 +82,7 @@ namespace BoidsSimulator
         {
             _boidsDatas = new BoidsData[_instanceCount];
 
-            BoidsInitializer.In(ref _boidsDatas, _allSearchBoidsSetting.SimulationAreaCenter, _allSearchBoidsSetting.SimulationAreaScale, 0.1f);
+            BoidsInitializer.In(_boidsDatas, _allSearchBoidsSetting.SimulationAreaCenter, _allSearchBoidsSetting.SimulationAreaScale, 0.1f);
         }
     }
 }

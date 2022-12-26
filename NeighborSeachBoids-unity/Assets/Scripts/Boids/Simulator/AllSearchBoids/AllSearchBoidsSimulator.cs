@@ -16,7 +16,7 @@ namespace Boids
             _allSearchBoidsSetting = boidsSetting;
         }
 
-        public void Calculate(ref NativeArray<Matrix4x4> instanceMatricesArray, BoidsData[] boidsDatas)
+        public void Calculate(NativeArray<Matrix4x4> instanceMatricesArray, BoidsData[] boidsDatas)
         {
             var instanceCount = boidsDatas.Length;
             var boidsDataArray = new NativeArray<BoidsData>(instanceCount, Allocator.TempJob);

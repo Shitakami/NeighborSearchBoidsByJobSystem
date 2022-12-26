@@ -9,7 +9,7 @@ namespace Boids
 {
     public static class BoidsInitializer
     {
-        public static void In(ref BoidsData[] boidsDatas, Vector3 simulationAreaCenter, Vector3 simulationAreaScale, float initializeVelocity)
+        public static void In(BoidsData[] boidsDatas, Vector3 simulationAreaCenter, Vector3 simulationAreaScale, float initializeVelocity)
         {
             for (var i = 0; i < boidsDatas.Length; ++i)
             {
